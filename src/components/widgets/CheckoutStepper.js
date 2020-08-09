@@ -1,4 +1,5 @@
-import React, {useState} from 'react';
+import React, { useState, useContext } from 'react';
+import { CartContext } from '../../state_management/CartContext';
 import { makeStyles } from '@material-ui/core/styles';
 import Stepper from '@material-ui/core/Stepper';
 import Step from '@material-ui/core/Step';
@@ -123,6 +124,7 @@ const useStyles = makeStyles((theme) => ({
 
 export default function CheckoutStepper() {
     const classes = useStyles();
+    const { cart, deleteFromCart } = useContext(CartContext);
     const [activeStep, setActiveStep] = useState(0);    
     const [isCardPayment, setIsCardPayment] = useState(true);
     const [paymentProgress, setPaymentProgress] = useState(0);
@@ -170,7 +172,7 @@ export default function CheckoutStepper() {
         if(nameOnCard !== '' && cardNumber !== '' && expireMonthYear !== '' && cvvCode !== ''){
             setPaymentProceed(true);
             setPaymentProgress(0);  
-            setPaymentProgressAdddtion(20);                        
+            setPaymentProgressAdddtion(20);                               
         }            
         else
             setAddToCartStatus(true);
@@ -181,6 +183,14 @@ export default function CheckoutStepper() {
     const changePaymentOption = () => {
         setIsCardPayment(!isCardPayment);
     }  
+
+    const emptyCardAfterPayment = () => {
+        for(let i=0; i <cart.length; i++)
+            deleteFromCart(cart[i].id);
+    }
+
+    if(isPaymentFinished)
+        emptyCardAfterPayment();
 
     // for payment progress bar
     React.useEffect(() => {
