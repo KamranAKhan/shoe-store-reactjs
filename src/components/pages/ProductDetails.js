@@ -125,6 +125,7 @@ function ProductDetails() {
 
     const handleAddToCart = () => {
         productDetail.selectedSize = size;
+        productDetail.quantity = 1;
         addToCart(productDetail);
         setAddToCartStatus(true);
     }
@@ -154,7 +155,7 @@ function ProductDetails() {
                         {
                             productDetail.images.map((item, index) => {
                                 return (
-                                    <Paper className={classes.paperCarouselHeight}>
+                                    <Paper className={classes.paperCarouselHeight} key={index}>
                                         <img src={item} style={{ maxWidth: '100%' }} alt={productDetail.name + '-img-' + index}/>
                                     </Paper>
                                 )

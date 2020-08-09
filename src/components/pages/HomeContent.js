@@ -113,7 +113,7 @@ export default function HomeContent() {
                 {
                     topRatedShoes.map((shoe, index) => {
                         return (
-                            <Grid item xs={12} sm={6} md={4} className={classes.gridParentForRating}>
+                            <Grid item xs={12} sm={6} md={4} className={classes.gridParentForRating} key={index}>
                                 <div className={classes.ratingCountSection}>
                                     <GradeIcon className={classes.ratingCountIcon}/><span className={classes.ratingCountValue}>{shoe.rating}</span>
                                 </div>
@@ -155,9 +155,9 @@ export default function HomeContent() {
             <h2>Most Reviewed Products:</h2>
             <Grid container spacing={2} className={classes.mainGrid}>
                 {
-                    mostReviewedShoes.map((shoe, index) => {
+                    mostReviewedShoes.map((shoe, ind) => {
                         return (
-                            <Grid item xs={12} sm={6} md={4} className={classes.gridParentForRating}>
+                            <Grid item xs={12} sm={6} md={4} className={classes.gridParentForRating} key={ind}>
                                 <div className={classes.reviewsCountSection}>
                                     <span className={classes.ratingCountValue}>{shoe.reviewsCount}<span className={classes.reviewsCountValue}>reviews</span></span>
                                 </div>
