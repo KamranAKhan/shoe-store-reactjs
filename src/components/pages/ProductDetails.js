@@ -5,6 +5,7 @@ import shoesDetails from '../../data/ShoesDetails';
 import { makeStyles } from '@material-ui/core/styles';
 
 import InputLabel from '@material-ui/core/InputLabel';
+
 import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
 import Grid from '@material-ui/core/Grid';
@@ -116,7 +117,7 @@ function ProductDetails() {
     //const [addToFavorite, setAddToFavorite] = useState(false);
 
     const { productId } = useParams();
-    let productDetail = shoesDetails.filter(x => x.id === productId)[0];    
+    let productDetail = shoesDetails.filter(x => x.id === Number(productId))[0];    
 
     const handleSizeChange = (event) => {
         setSize(event.target.value);
@@ -154,7 +155,7 @@ function ProductDetails() {
                             productDetail.images.map((item, index) => {
                                 return (
                                     <Paper className={classes.paperCarouselHeight}>
-                                        <img src={item} style={{ maxWidth: '100%' }} alt={productDetail.name + '-img-' + index }/>
+                                        <img src={item} style={{ maxWidth: '100%' }} alt={productDetail.name + '-img-' + index}/>
                                     </Paper>
                                 )
                             })
