@@ -140,8 +140,8 @@ function Cart() {
     const [isCartUpdated, setIsCartUpdate] = useState(false);
     const [addToCartStatus, setAddToCartStatus] = useState(false);
 
-    console.log(cart);
-    
+
+    console.log("loadedCart", cart);
     const handleSizeChange = (event, productId) => {
         let cartObj = cart.filter(x => x.id === productId)[0];
         cartObj.selectedSize = Number(event.target.value);
@@ -170,9 +170,9 @@ function Cart() {
     let totalAmount = 0;        
     
     for(let i = 0; i < cart.length; i++){
-        subtotal = cart[i].price * cart[i].quantity;
+        subtotal += cart[i].price * cart[i].quantity;
     }
-    totalAmount = subtotal + shippingCost;    
+    totalAmount = subtotal + shippingCost;
 
     return (
         <div>

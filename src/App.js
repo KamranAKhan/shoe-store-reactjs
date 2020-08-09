@@ -23,6 +23,7 @@ function App() {
             <Route exact path="products/:productId" element={<ProductDetails animate={true} />}></Route>
             <Route path="about" element={<AboutUs />}></Route>
             <Route path="contact" element={<ContactUs />}></Route>
+            <Route path="contact" element={<ContactUs />}></Route>
             <Route path="cart" element={<Cart />}></Route>
             <Route path="checkout" element={<Checkout />}></Route>
           </Route>

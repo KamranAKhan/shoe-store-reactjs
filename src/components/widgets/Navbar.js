@@ -70,7 +70,8 @@ const useStyles = makeStyles((theme) => ({
   content: {
     flexGrow: 1,
     padding: theme.spacing(3),
-    marginTop: 64
+    marginTop: 64,
+    width: '100%'
   },
   headerTitle: {
     color: '#ffffff',
@@ -100,6 +101,9 @@ const useStyles = makeStyles((theme) => ({
   },
   cartIcon: {
     float: 'right',
+  },
+  logoIcon:{
+    cursor: 'pointer'
   }
 
 }));
@@ -138,8 +142,8 @@ function Navbar(props) {
       <div className={classes.toolbar} >
         <List className={classes.paddingBottom0}>
           <ListItem className={classes.paddingTopBottom0}>
-            <ListItemIcon button className={classes.navCancelIcon} onClick={handleDrawerToggle}> <ClearIcon /> </ListItemIcon>
-            <ListItemText><img src={process.env.PUBLIC_URL + '/logo.png'} alt="booty logo" className={classes.logo} /></ListItemText>
+            <ListItemIcon className={classes.navCancelIcon} onClick={handleDrawerToggle}> <ClearIcon /> </ListItemIcon>
+            <ListItemText className={classes.logoIcon} onClick={() => ChangeRoute('/')}><img src={process.env.PUBLIC_URL + '/logo.png'} alt="booty logo" className={classes.logo} /></ListItemText>
           </ListItem>
         </List>
       </div>
@@ -165,15 +169,15 @@ function Navbar(props) {
       </List>
       <Divider />
       <List>
-        <ListItem button onClick={() => ChangeRoute('/products')}>
+        <ListItem button onClick={() => alert('This functionality will be implemented soon...')}>
           <ListItemIcon className={classes.navIcon}> <LoyaltyIcon /> </ListItemIcon>
           <ListItemText primary={'Membership'} />
         </ListItem>
-        <ListItem button onClick={() => ChangeRoute('/products')}>
+        <ListItem button onClick={() => alert('This functionality will be implemented soon...')}>
           <ListItemIcon className={classes.navIcon}> <SubscriptionsIcon /> </ListItemIcon>
           <ListItemText primary={'Subscribe'} />
         </ListItem>
-        <ListItem button onClick={() => ChangeRoute('/products')}>
+        <ListItem button onClick={() => alert('This functionality will be implemented soon...')}>
           <ListItemIcon className={classes.navIcon}> <StarsIcon /> </ListItemIcon>
           <ListItemText primary={'Favourites'} />
         </ListItem>
