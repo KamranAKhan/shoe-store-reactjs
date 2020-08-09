@@ -17,8 +17,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function SnackbarAlert(props) {
-    const classes = useStyles();
-    console.log(props)
+    const classes = useStyles();    
     const [open, setOpen] = React.useState(props.status);    
 
     const handleClose = (event, reason) => {

@@ -156,10 +156,10 @@ export default function CheckoutStepper() {
 
     // Stepper Steps Starts
     const gotoBilling = () => {
-        //if(firstName !== '' && lastName !== '' && address1 !== '' && cityTown !== '' && postalCode !== '' && email !== '')
+        if(firstName !== '' && lastName !== '' && address1 !== '' && cityTown !== '' && postalCode !== '' && email !== '')
             setActiveStep((prevActiveStep) => prevActiveStep + 1);
-        //else
-        //    setAddToCartStatus(true);
+        else
+            setAddToCartStatus(true);
     }
     
     const gotoPayment = () => {
@@ -167,13 +167,13 @@ export default function CheckoutStepper() {
     }
 
     const placeOrder = () => {        
-        //if(nameOnCard !== '' && cardNumber !== '' && expireMonthYear !== '' && cvvCode !== ''){
+        if(nameOnCard !== '' && cardNumber !== '' && expireMonthYear !== '' && cvvCode !== ''){
             setPaymentProceed(true);
             setPaymentProgress(0);  
             setPaymentProgressAdddtion(20);                        
-        //}            
-        //else
-            //setAddToCartStatus(true);
+        }            
+        else
+            setAddToCartStatus(true);
     }
     // Stepper Steps Ends
 
