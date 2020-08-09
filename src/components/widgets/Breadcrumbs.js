@@ -15,10 +15,7 @@ export default function AppBreadcrumbs() {
     let currentRoutes = []
     currentRoutes = location.pathname !== '/' ? location.pathname.split('/') : [];
     if (currentRoutes.length > 0)
-        currentRoutes.shift();
-
-    console.log(currentRoutes);
-
+        currentRoutes.shift();    
 
     if (currentRoutes.length > 0) {
         return (

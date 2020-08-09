@@ -116,9 +116,7 @@ function ProductDetails() {
     //const [addToFavorite, setAddToFavorite] = useState(false);
 
     const { productId } = useParams();
-    let productDetail = shoesDetails.filter(x => x.id === productId)[0];
-    console.log(productDetail.images);
-
+    let productDetail = shoesDetails.filter(x => x.id === productId)[0];    
 
     const handleSizeChange = (event) => {
         setSize(event.target.value);
@@ -130,8 +128,7 @@ function ProductDetails() {
         setAddToCartStatus(true);
     }
 
-    const handleAddToFavorite = (event) => {
-        console.log('favorite clicked');
+    const handleAddToFavorite = (event) => {        
         event.preventDefault();
         //setAddToFavorite(true);
     }

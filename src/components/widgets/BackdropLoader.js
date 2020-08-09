@@ -10,8 +10,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function BackdropLoader(props) {
-    console.log(props);
+export default function BackdropLoader(props) {    
   const classes = useStyles();
   const [open, setOpen] = React.useState(props.isLoader);
   const handleClose = () => {

@@ -141,7 +141,7 @@ function Cart() {
     const [addToCartStatus, setAddToCartStatus] = useState(false);
 
 
-    console.log("loadedCart", cart);
+    
     const handleSizeChange = (event, productId) => {
         let cartObj = cart.filter(x => x.id === productId)[0];
         cartObj.selectedSize = Number(event.target.value);

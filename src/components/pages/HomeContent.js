@@ -105,8 +105,7 @@ export default function HomeContent() {
 
     let topRatedShoes = shoesDetails.sort((a, b) => parseFloat(b.rating) - parseFloat(a.rating)).filter((x, ind) => ind < 3);
     let mostReviewedShoes = shoesDetails.sort((a, b) => parseFloat(b.reviewsCount) - parseFloat(a.reviewsCount)).filter((x, ind) => ind < 3);
-
-    console.log(topRatedShoes);
+    
     return (
         <div>
             <h2>Top Rated Products:</h2>
