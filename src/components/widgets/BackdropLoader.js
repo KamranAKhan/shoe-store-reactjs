@@ -18,10 +18,10 @@ export default function BackdropLoader(props) {
     props.setIsLoader(false);
   };  
 
-  // setTimeout(()=>{
-  //     setOpen(false);
-  //     props.setIsLoader (false);
-  // }, 700)
+  setTimeout(()=>{
+      setOpen(false);
+      props.setIsLoader (false);
+  }, 700)
 
   return (
     <div>      
