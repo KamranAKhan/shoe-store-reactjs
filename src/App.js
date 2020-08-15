@@ -13,6 +13,8 @@ import ContextProvider from './state_management/ContextProvider';
 import Cart from './components/pages/Cart';
 import Checkout from './components/pages/Checkout';
 
+import PageNotFound from './components/pages/PageNotFound';
+
 function App() {
   return (
     <ContextProvider>
@@ -27,6 +29,7 @@ function App() {
             <Route path="cart" element={<Cart />}></Route>
             <Route path="checkout" element={<Checkout />}></Route>
           </Route>
+          <Route path="*" element={<PageNotFound/>}></Route>
         </Routes>
       </BrowserRouter>
     </ContextProvider>
