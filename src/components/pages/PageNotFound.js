@@ -35,7 +35,7 @@ function PageNotFound() {
     return (
         <div className="page-not-found">
             <div>
-                <img src={process.env.PUBLIC_URL + '/logo_black.png'} />
+                <img src={process.env.PUBLIC_URL + '/logo_black.png'} alt="logo booty"/>
             </div>
             <h1>404 - Page Not Found</h1>
             <Button
