@@ -152,6 +152,11 @@ export default function CheckoutStepper() {
     let daysOfWeek = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
     let months = ["Jan", "Feb", "Mar", "Apr", "May", "June", "July", "Aug", "Sep", "Oct", "Nov", "Dec"];
 
+    
+    var currentDate = new Date();
+    var numberOfDaysToAdd = 3;
+    currentDate.setDate(currentDate.getDate() + numberOfDaysToAdd); 
+
     const handleBack = () => {
         setActiveStep((prevActiveStep) => prevActiveStep - 1);
     };
@@ -415,7 +420,8 @@ export default function CheckoutStepper() {
                         <h1>Thank You.</h1>
                         <h2>Your order has been placed.</h2>                        
                         <p>Estimated Delivery Date</p>
-                        <p>{ (daysOfWeek[new Date().getDay()+3]) + ', ' + (months[new Date().getMonth()]) + ' ' + (new Date().getDate()+3) + ', ' + new Date().getFullYear()}</p>
+                        {/* <p>{ (daysOfWeek[new Date().getDay()+3]) + ', ' + (months[new Date().getMonth()]) + ' ' + (new Date().getDate()+3) + ', ' + new Date().getFullYear()}</p> */}
+                        <p>{ (daysOfWeek[currentDate.getDay()]) + ', ' + months[currentDate.getMonth()] + ' ' + currentDate.getDate() + ', ' + currentDate.getFullYear() }</p>
                     </div>
                 :   <></>
             }
